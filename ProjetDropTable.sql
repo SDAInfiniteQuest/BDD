@@ -1,18 +1,8 @@
-drop table UTILISATEUR;
-
-drop table OBJETCULTUREL;
-
 drop table FILM;
 
 drop table LIVRE;
 
 drop table ALBUM;
-
-drop table PERSONNE;
-
-drop table COMMENTAIRE;
-
-drop table LISTEOBJET;
 
 drop table COMMENTE;
 
@@ -37,3 +27,13 @@ drop table JOUEDANS;
 drop table ECRIT;
 
 drop table CREE;
+
+drop table UTILISATEUR;
+
+drop table OBJETCULTUREL;
+
+drop table PERSONNE;
+
+drop table COMMENTAIRE;
+
+drop table LISTEOBJET;
