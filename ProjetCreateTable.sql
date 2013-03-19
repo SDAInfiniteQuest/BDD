@@ -3,6 +3,7 @@ create table UTILISATEUR
 (
 	idUtilisateur number(6) PRIMARY KEY,
 	date_de_naissance date,
+	pseudo varchar(15),
 	nom varchar2(30),
 	prenom varchar2(15),
 	adresse varchar2(80),
@@ -24,7 +25,7 @@ create table FILM
 	idObjet number(6),
 	titreFilm varchar2(50) NOT NULL,
 	PRIMARY KEY (idObjet),
-	FOREIGN KEY (idObjet) REFERENCES OBJETCULTUREL
+	CONSTRAINT FOREIGN KEY (idObjet) REFERENCES OBJETCULTUREL ON DELETE CASCADE
 );
 
 create table LIVRE 
@@ -34,7 +35,7 @@ create table LIVRE
 	collection varchar2(30),
 	titreLivre varchar2(30) NOT NULL,
 	PRIMARY KEY (idObjet),
-	FOREIGN KEY (idObjet) REFERENCES OBJETCULTUREL
+	CONSTRAINT FOREIGN KEY (idObjet) REFERENCES OBJETCULTUREL ON DELETE CASCADE
 );
 
 create table ALBUM
@@ -42,7 +43,7 @@ create table ALBUM
 	idObjet number(6),
 	titreAlbum varchar2(30) NOT NULL,
 	PRIMARY KEY (idObjet),
-	FOREIGN KEY (idObjet) REFERENCES OBJETCULTUREL
+	FOREIGN KEY (idObjet) REFERENCES OBJETCULTUREL ON DELETE CASCADE
 );
 
 create table PERSONNE 
