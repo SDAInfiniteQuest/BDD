@@ -182,3 +182,22 @@ create table CREE
 	FOREIGN KEY (idPersonne) REFERENCES PERSONNE 
 );
 
+create table SUIVRE
+(
+	--Pas sur de la syntax
+	idUtilisateur number(6) ,
+	idFollower number(6) ,
+	PRIMARY KEY (idUtilisateur,idFollower),
+	FOREIGN KEY (idUtilisateur) REFERENCES UTILISATEUR,
+	FOREIGN KEY (idFollower) REFERENCES UTILISATEUR.idUtilisateur 
+);
+
+create table SUGGESTION
+(
+	
+	idUtilisateur number(6) ,
+	idObjet number(6) ,
+	PRIMARY KEY (idUtilisateur,idObjet),
+	FOREIGN KEY (idUtilisateur) REFERENCES UTILISATEUR,
+	FOREIGN KEY (idObjet) REFERENCES OBJETCULTUREL
+);

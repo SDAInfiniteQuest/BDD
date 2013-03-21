@@ -1,3 +1,7 @@
+--Il faudra peut etres reecrire tout les triggers de maniere plus 'imperative', car risque
+--de maxi bordel avec les appelle en cascade 
+
+
 --Trigger a l'insertion dans utilisateur 
 	--verifie qu'un pseudo n'est pas deja attribue et sinon en creer un en incrementer un
 	--chiffre
@@ -43,8 +47,9 @@ CREATE TRIGGER insertUtil
 			
 END;
 /
-
-
+-- TRIGGER de suppression
+--En cas de supression d'un utilisateur les trigger s'appelle en cascade
+--------
 CREATE TRIGGER SupprUtil
 	BEFORE
 		DELETE ON UTILISATEUR
@@ -134,6 +139,8 @@ CREATE TRIGGER supprListe
 			END;
 /
 
+--supression Objetculturel
+
 CREATE TRIGGER supprObjetCulturel
 	BEFORE
 		DELETE ON LISTEOBJET
@@ -146,9 +153,85 @@ CREATE TRIGGER supprObjetCulturel
 			
 				DELETE 
 				FROM APPARTIENTLISTE
-				WHERE old.idListe==APPARTIENTLISTE.idListe; 
+				WHERE old.idObjet==APPARTIENTLISTE.idObjet; 
 
 				DELETE 
 				FROM ESTDECRITDANS
+				WHERE old.idObjet=ESTDECRITDANS.idObjet; 
+				
+				DELETE 
+				FROM ESTCOMMENTE
+				WHERE old.idObjet==ESTCOMMENTE.idObjet; 
+
+				DELETE 
+				FROM NOTE
+				WHERE old.idObjet==NOTE.idObjet; 
+
+			END;
+/
+
+
+
+CREATE TRIGGER supprEstCommente
+	BEFORE
+		DELETE ON ESTCOMMENTE
+		
+		REFERENCING 	
+			
+		DECLARE
+			idComment_aSuppr COMMENTAIRE.idComment%type;
+			BEGIN
+			
+				SELECT idComment
+				INTO idComment_aSuppr
+				FROM COMMENTAIRE
+				WHERE old.idComment==COMMENTAIRE.idComment; 
+
+				DELETE 
+				FROM COMMENTAIRE
+				WHERE old.idComment==COMMENTAIRE.idComment; 
+
+				DELETE 
+				FROM COMMENTE
+				WHERE COMMENTE.idComment==idComment_aSuppr;
+			
+			END;
+/
+
+	
+
+--/TRIGGER de suppression
+
+--Ajout automatiquement l'objet a la liste mois/annee de sa date de sortie
+CREATE TRIGGER insertObjetCulturelListe
+	AFTER
+		INSERT ON OBJETCULTUREL
+		
+		REFERENCING 	
+		
+		mois	varchar2(6);
+		annee varchar2(6);
+		nom_liste varchar(12);
+
+		DECLARE
+			BEGIN
+			
+			mois=Trunc(sysdate,'MM');
+			annee=Trunc(sysdate,'YYYY');
+
+				SELECT 
+				INTO mois
+				FROM 
+				WHERE old.idComment==COMMENTAIRE.idComment; 
+
+				DELETE 
+				FROM COMMENTAIRE
+				WHERE old.idComment==COMMENTAIRE.idComment; 
+
+				DELETE 
+				FROM COMMENTE
+
+--TRIGGER d'insertion 
+
 
 --Divers trigger de test d'integrite de la base apres transaction
