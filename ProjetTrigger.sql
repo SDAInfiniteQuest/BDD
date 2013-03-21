@@ -7,12 +7,11 @@
 	--chiffre
 
 	
-CREATE TRIGGER insertUtil
+CREATE OR REPLACE TRIGGER insertUtil
 	BEFORE
 		INSERT ON UTILISATEUR
+		FOR EACH ROW
 		
-		REFERENCING 	
-			
 		DECLARE
 			newId UTILISATEUR.idUtilisateur%type;
 			testPseudo UTILISATEUR.pseudo%type;
@@ -42,7 +41,7 @@ CREATE TRIGGER insertUtil
 	--		SELECT mail FROM new WHERE REGEX_LIKE(mail,)	
 
 			SELECT max(idUtilisateur) INTO newId FROM UTILISATEUR;
-			:new.idUtilisateur=newId;
+			:new.idUtilisateur=newId+1;
 
 			
 END;
@@ -50,12 +49,10 @@ END;
 -- TRIGGER de suppression
 --En cas de supression d'un utilisateur les trigger s'appelle en cascade
 --------
-CREATE TRIGGER SupprUtil
+CREATE OR REPLACE TRIGGER SupprUtil
 	BEFORE
 		DELETE ON UTILISATEUR
 		
-		REFERENCING 	
-			
 		DECLARE
 			newId UTILISATEUR.idUtilisateur%type;
 			testPseudo UTILISATEUR.pseudo%type;
@@ -83,12 +80,10 @@ CREATE TRIGGER SupprUtil
 /
 
 
-CREATE TRIGGER supprComment
+CREATE OR REPLACE TRIGGER supprComment
 	BEFORE
 		DELETE ON COMMENTE
 		
-		REFERENCING 	
-			
 		DECLARE
 
 			BEGIN
@@ -101,7 +96,7 @@ CREATE TRIGGER supprComment
 /
 
 
-CREATE TRIGGER supprCreeliste
+CREATE OR REPLACE TRIGGER supprCreeliste
 	BEFORE
 		DELETE ON CREELISTE
 		
@@ -118,12 +113,10 @@ CREATE TRIGGER supprCreeliste
 			END;
 /
 
-CREATE TRIGGER supprListe
+CREATE OR REPLACE TRIGGER supprListe
 	BEFORE
 		DELETE ON LISTEOBJET
 		
-		REFERENCING 	
-			
 		DECLARE
 
 			BEGIN
@@ -141,12 +134,10 @@ CREATE TRIGGER supprListe
 
 --supression Objetculturel
 
-CREATE TRIGGER supprObjetCulturel
+CREATE OR REPLACE TRIGGER supprObjetCulturel
 	BEFORE
 		DELETE ON LISTEOBJET
 		
-		REFERENCING 	
-			
 		DECLARE
 
 			BEGIN
@@ -172,12 +163,10 @@ CREATE TRIGGER supprObjetCulturel
 
 
 
-CREATE TRIGGER supprEstCommente
+CREATE  OR REPLACE TRIGGER supprEstCommente
 	BEFORE
 		DELETE ON ESTCOMMENTE
 		
-		REFERENCING 	
-			
 		DECLARE
 			idComment_aSuppr COMMENTAIRE.idComment%type;
 			BEGIN
@@ -203,26 +192,45 @@ CREATE TRIGGER supprEstCommente
 --/TRIGGER de suppression
 
 --Ajout automatiquement l'objet a la liste mois/annee de sa date de sortie
-CREATE TRIGGER insertObjetCulturelListe
+/*
+CREATE OR REPLACE TRIGGER insertObjetCulturelListe
+	BEFORE
+		INSERT ON OBJETCULTUREL
+		
+		REFERENCING
+
+		DECLARE
+
+		BEGIN
+
+		END
+	
+	
 	AFTER
 		INSERT ON OBJETCULTUREL
 		
 		REFERENCING 	
 		
+
+		DECLARE
+
 		mois	varchar2(6);
 		annee varchar2(6);
 		nom_liste varchar(12);
 
-		DECLARE
-			BEGIN
+			CURSOR IS
+				SELECT *
+				FROM CREELISTE,LISTEOBJET
+				WHERE CREELISTE.idUtilisateur==1 and CREELISTE.idListe==LISTEOBJET.idListe and
+				LISTEOBJET.nomListe==CONCAT(mois,annne); 
+		
+		BEGIN
 			
-			mois=Trunc(sysdate,'MM');
-			annee=Trunc(sysdate,'YYYY');
-
-				SELECT 
-				INTO mois
-				FROM 
-				WHERE old.idComment==COMMENTAIRE.idComment; 
+			INSERT INTO LISTEOBJET VALUES (0,new.genre) INTO 
+			mois=Trunc(new.date_sortie,'MM');
+			annee=Trunc(new.date_sortie,'YYYY');
+				
+			if
 
 				DELETE 
 				FROM COMMENTAIRE
@@ -230,8 +238,10 @@ CREATE TRIGGER insertObjetCulturelListe
 
 				DELETE 
 				FROM COMMENTE
-
+		END;
+/
 --TRIGGER d'insertion 
 
+*/
 
 --Divers trigger de test d'integrite de la base apres transaction

@@ -49,7 +49,8 @@ create table ALBUM
 create table PERSONNE 
 (
 	idPersonne number(6) PRIMARY KEY,
-	nomPersonne varchar2(30) NOT NULL
+	nomPersonne varchar2(30) NOT NULL,
+	prenomPersonne varchar2(30) NOT NULL
 );
 
 create table COMMENTAIRE
@@ -61,7 +62,7 @@ create table COMMENTAIRE
 create table LISTEOBJET
 (
 	idListe number(6) PRIMARY KEY,
-	typeListe  varchar2(50),
+	typeListe  varchar2(30),
 	nomListe varchar2(30) NOT NULL
 );
 
@@ -189,12 +190,11 @@ create table SUIVRE
 	idFollower number(6) ,
 	PRIMARY KEY (idUtilisateur,idFollower),
 	FOREIGN KEY (idUtilisateur) REFERENCES UTILISATEUR,
-	FOREIGN KEY (idFollower) REFERENCES UTILISATEUR.idUtilisateur 
+	FOREIGN KEY (idFollower) REFERENCES UTILISATEUR 
 );
 
 create table SUGGESTION
 (
-	
 	idUtilisateur number(6) ,
 	idObjet number(6) ,
 	PRIMARY KEY (idUtilisateur,idObjet),

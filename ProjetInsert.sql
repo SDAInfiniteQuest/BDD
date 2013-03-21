@@ -1,0 +1,128 @@
+INSERT INTO utilisateur 
+VALUES (1,to_date('2013/03/14','YYYY/MM/DD'),'test1','john','smith','mail@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (2,to_date('2013/01/04','YYYY/MM/DD'),'test2','marc','klein','mail2@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (3,to_date('2011/07/14','YYYY/MM/DD'),'test3','indiana','johns','mail3@testmail.fr','FFFFFF');
+
+
+
+INSERT INTO objetculturel
+VALUES (1,to_date('1995/04/14','YYYY/MM/DD') ,'fantastistique');
+
+INSERT INTO objetculturel
+VALUES (2,to_date('1735/12/25','YYYY/MM/DD') ,'classique');
+
+INSERT INTO objetculturel
+VALUES (3,to_date('2002/06/08','YYYY/MM/DD') ,'rock');
+
+INSERT INTO objetculturel
+VALUES (4,to_date('2005/05/11','YYYY/MM/DD') ,'aventure');
+
+
+INSERT INTO FILM
+VALUES (1,'super film fantastique');
+
+INSERT INTO LIVRE
+VALUES (2,'roman',null,'litterature classique');
+
+INSERT INTO ALBUM
+VALUES (3,'super groupe');
+
+INSERT INTO FILM
+VALUES (4,'super film aventure');
+
+
+INSERT INTO PERSONNE
+VALUES (1,'Mark','A.Butler');
+
+INSERT INTO PERSONNE
+VALUES (2,'Ray','S.Tilis');
+
+INSERT INTO PERSONNE
+VALUES (3,'Taylor','Swanson');
+
+INSERT INTO PERSONNE
+VALUES (4,'Edward','Rines');
+
+INSERT INTO PERSONNE
+VALUES (5,'Robert','Murray');
+
+INSERT INTO PERSONNE
+VALUES (6,'lois','Drew');
+
+INSERT INTO PERSONNE
+VALUES (7,'Rachel','Nguyen');
+
+INSERT INTO PERSONNE
+VALUES (8,'Erich','Thomas');
+
+INSERT INTO PERSONNE
+VALUES (9,'Paul','Lembo');
+
+
+INSERT INTO REALISE
+VALUES (1,'1');
+
+INSERT INTO JOUEDANS
+VALUES (2,'1');
+
+INSERT INTO JOUEDANS
+VALUES (3,'1');
+
+INSERT INTO ECRIT
+VALUES (4,'2');
+
+INSERT INTO CREE
+VALUES (5,'3');
+
+INSERT INTO CREE
+VALUES (6,'3');
+
+INSERT INTO REALISE
+VALUES (7,'4');
+
+INSERT INTO JOUEDANS
+VALUES (8,'4');
+
+INSERT INTO JOUEDANS
+VALUES (9,'4');
+
+
+
+INSERT INTO LISTEOBJET
+VALUES(1,'LIVRE','liste litterature classique');
+
+INSERT INTO LISTEOBJET
+VALUES(2,'ALBUM','liste rock !');
+
+INSERT INTO LISTEOBJET
+VALUES(3,'FILM','liste film cool');
+
+
+
+INSERT INTO CREELISTE
+VALUES(1,1);
+
+INSERT INTO LISTEOBJET
+VALUES(2,2);
+
+INSERT INTO LISTEOBJET
+VALUES(3,3);
+
+
+INSERT APPARTIENTLISTE
+VALUES(1,2);
+
+INSERT APPARTIENTLISTE
+VALUES(2,3);
+
+INSERT APPARTIENTLISTE
+VALUES(3,1);
+
+INSERT APPARTIENTLISTE
+VALUES(3,4);
+
+
