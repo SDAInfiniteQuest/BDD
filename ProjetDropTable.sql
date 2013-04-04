@@ -28,12 +28,16 @@ drop table ECRIT;
 
 drop table CREE;
 
-drop table UTILISATEUR;
-
-drop table OBJETCULTUREL;
-
 drop table PERSONNE;
 
 drop table COMMENTAIRE;
 
 drop table LISTEOBJET;
+
+drop table SUGGESTION;
+
+drop table SUIVRE;
+
+drop table UTILISATEUR;
+
+drop table OBJETCULTUREL;

@@ -2,11 +2,11 @@
 create table UTILISATEUR 
 (
 	idUtilisateur number(6) PRIMARY KEY,
-	date_de_naissance date,
+	date_de_naissance date NOT NULL,
 	pseudo varchar(15),
-	nom varchar2(30),
-	prenom varchar2(15),
-	adresse varchar2(80),
+	nom varchar2(30) NOT NULL,
+	prenom varchar2(15) NOT NULL,
+	--adresse varchar2(80),
 	mail varchar2(80) NOT NULL,
 	hash varchar2(80) NOT NULL
 	--check sur le mail de forme [a-z,A-Z,0-9]*@[a-z,A-Z,0-9]*.[a-z,A-Z,0-9]*
@@ -25,7 +25,7 @@ create table FILM
 	idObjet number(6),
 	titreFilm varchar2(50) NOT NULL,
 	PRIMARY KEY (idObjet),
-	CONSTRAINT FOREIGN KEY (idObjet) REFERENCES OBJETCULTUREL ON DELETE CASCADE
+	FOREIGN KEY (idObjet) REFERENCES OBJETCULTUREL ON DELETE CASCADE
 );
 
 create table LIVRE 
@@ -35,7 +35,7 @@ create table LIVRE
 	collection varchar2(30),
 	titreLivre varchar2(30) NOT NULL,
 	PRIMARY KEY (idObjet),
-	CONSTRAINT FOREIGN KEY (idObjet) REFERENCES OBJETCULTUREL ON DELETE CASCADE
+	FOREIGN KEY (idObjet) REFERENCES OBJETCULTUREL ON DELETE CASCADE
 );
 
 create table ALBUM
@@ -62,7 +62,7 @@ create table COMMENTAIRE
 create table LISTEOBJET
 (
 	idListe number(6) PRIMARY KEY,
-	typeListe  varchar2(30),
+	typeListe varchar2(30),
 	nomListe varchar2(30) NOT NULL
 );
 
@@ -154,7 +154,6 @@ create table REALISE
 	FOREIGN KEY (idObjet) REFERENCES OBJETCULTUREL,
 	FOREIGN KEY (idPersonne) REFERENCES PERSONNE 
 );
-
 create table JOUEDANS 
 (
 	idPersonne number(6) ,
