@@ -1,0 +1,75 @@
+/* Element generaux */
+
+
+body
+{
+	background-color:#2e2e5d;
+}
+
+#main_wrapper
+{
+	width:	70%;
+	margin:	auto;
+}
+
+
+
+/*header*/
+
+header
+{
+	height: 250px;
+	background-color:#797987;
+	background-image: url('images/separateur.png') repeat-x bottom; 	
+}
+
+header h1
+{
+	/*font-family: ;	
+	font-size: ;
+	font-weight;
+	*/
+	display:inline-block;
+}
+
+
+
+
+
+
+/*navigation*/
+
+
+nav
+{
+	display: inline-block;
+	width: 500px;
+	text-align:right;
+	
+}
+
+nav ul
+{
+	list-style-type: none;	
+}
+
+nav li
+{
+	display: inline-block;
+	margin-right: 15px;	
+}
+
+nav a
+{
+	color:#505076;
+	padding-bottom: 3px;
+	text-decoration: none;
+}
+
+nav a:hover
+{
+	color:#9393ba;
+}
+
+
+
