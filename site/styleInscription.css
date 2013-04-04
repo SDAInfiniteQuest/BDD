@@ -1,0 +1,26 @@
+#bienvenue
+{
+	display:inline-block;
+	position:relative;
+	top:30px;
+}
+
+#formulaire
+{
+	display:inline-block;
+	position:relative;
+	left:25%;
+	top:100px;
+}
+
+#formulaire label
+{
+	color:#ffffff;
+	margin-bottom:5px;
+	/*font-family font-size*/
+}
+input
+{
+	position:relative;
+	left:15%;
+}

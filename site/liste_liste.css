@@ -1,0 +1,20 @@
+h2
+{
+	font-size:16px;
+	color:#000000;
+}
+
+#liste_film,#liste_musique,#liste_livre
+{
+	display:inline-block;
+	background-color:rgba(0,0,0,0.5);
+	position:relative;
+	top:25px;
+	margin-left:18%;
+}
+
+#liste-musique,#liste_livre
+{
+}
+
+

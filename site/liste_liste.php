@@ -1,11 +1,9 @@
-/* prend une liste id*/
-
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="liste_liste.css">
 		<title>BiblioMedia </title>
 
 		<!-- Script de compatibilite html5 pour IE < 9 --!>
@@ -17,27 +15,31 @@
 	</head>
 
 	<body>
-		<div id="main_wrapper">
 			
 			<?php include("header.php"); ?> 
 			
-			<div id="description_list">
-				<?php>
-				?>
-			</div>
-			
-			<div id="list">
-				<?php>
-				?>
-			</div>
-			
-			<div id="list_comment">
-				<?php>
+		<div id="main_wrapper">
+			<div id="liste_film">
+				<h2>Film</h2>
+				<?php
 				?>
 			</div>
 
-			<?php include("footer.php"); ?>
+			<div id="liste_musique">
+				<h2>Musique</h2>
+				<?php
+				?>
+			</div>
+
+			<div id="liste_livre">
+				<h2>Livre</h2>
+				<?php
+				?>
+			</div>
+			
 
 		</div>
+			<?php include("footer.php"); ?>
+
 	</body>
 </html>

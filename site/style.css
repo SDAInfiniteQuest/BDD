@@ -10,17 +10,26 @@ body
 {
 	width:	70%;
 	margin:	auto;
+	padding-bottom:130px;
 }
 
+html, body,#main_wrapper{
+		height: 100%;
+}
 
+body > #main_wrapper
+{
+	height: auto; min-height: 100%; 
+}
 
 /*header*/
 
 header
 {
-	height: 250px;
+	height: 130px;
 	background-color:#797987;
 	background-image: url('images/separateur.png') repeat-x bottom; 	
+	margin:-10px;
 }
 
 header h1
@@ -29,6 +38,9 @@ header h1
 	font-size: ;
 	font-weight;
 	*/
+	position:relative;
+	left:15%;
+	font-size:15px ;
 	display:inline-block;
 }
 
@@ -40,17 +52,48 @@ header h1
 /*navigation*/
 
 
-nav
+header nav
+{
+	display: inline-block;
+	float:right;
+	width: 500px;
+	text-align:right;
+	position:relative;
+	right:15%;
+	
+}
+
+footer nav
 {
 	display: inline-block;
 	width: 500px;
-	text-align:right;
-	
+	position:relative;
+	left:47%;
+}
+
+#searchbox_header
+{
+	margin-top:-15px;
+}
+
+#nav_and_search_footer
+{
+	display: inline-block;
+}
+
+#searchbox_footer
+{
+	float:right;
+	margin-top:-55px;
+	position:relative;
+	left:44%;
 }
 
 nav ul
 {
-	list-style-type: none;	
+	position:relative;
+	right:12%;
+	list-style-type: none;
 }
 
 nav li
@@ -71,5 +114,25 @@ nav a:hover
 	color:#9393ba;
 }
 
+#copyright
+{
+	position:relative;
+	left:15%;
+	font-size:13px;
+	margin-left:-5px;
+}
 
 
+/*footer*/
+
+footer{
+	clear:both;
+	position:relative;
+	z-index:10;
+	height: 130px;
+	background-color:#797987;
+	background-image: url('images/separateur.png') repeat-x bottom; 	
+	margin:-10px;
+	padding-bottom:-30px;
+	margin-top:-130px;
+}
