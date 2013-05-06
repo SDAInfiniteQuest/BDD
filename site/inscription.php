@@ -37,15 +37,25 @@
 			</div>
 
 			<div id="formulaire">	
-				<form method="post" action="#">
+				<form method="post" action="inscription_request.php">
 					
 					<p>
 						<label for="nom">Nom</label> <br/> <input type="text"name="nom" id="nom">
 					</p>
 
 					<p>
+						<label for="pseudo">Pseudo</label> <br/>  <input type="text"name="pseudo" id="pseudo">
+					</p>
+					
+					<p>
 						<label for="prenom">Prenom</label> <br/>  <input type="text"name="prenom" id="prenom">
 					</p>
+
+					<p>
+						<label for="date_naissance">Date de naissance de la forme YYYY/MM/DD </label>
+						<br/>  <input type="text"name="date_naissance" id="date_naissance">
+					</p>
+					
 
 					<p>
 						<label for="adresse">Adresse</label> <br/><input type="text"name="adresse" id="adresse">
