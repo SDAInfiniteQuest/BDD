@@ -7,6 +7,60 @@ VALUES (2,to_date('2013/01/04','YYYY/MM/DD'),'test2','marc','klein','mail2@testm
 INSERT INTO utilisateur 
 VALUES (3,to_date('2011/07/14','YYYY/MM/DD'),'test3','indiana','johns','mail3@testmail.fr','FFFFFF');
 
+INSERT INTO utilisateur 
+VALUES (4,to_date('2011/06/12','YYYY/MM/DD'),'test4','napoléon','bonaparte','mail4@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (5,to_date('2013/01/4','YYYY/MM/DD'),'test5','rené','descartes','mail5@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (6,to_date('2012/12/21','YYYY/MM/DD'),'test6','roland','emmerich','mail6@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (7,to_date('2012/10/19','YYYY/MM/DD'),'test7','mickael','von clausewitz','mail7@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (8,to_date('2012/03/09','YYYY/MM/DD'),'test8','vladimir','kramnik','mail8@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (9,to_date('2012/09/01','YYYY/MM/DD'),'test9','yi','wukong','mail9@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (10,to_date('2012/08/15','YYYY/MM/DD'),'test10','domo','vedugato','mail10@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (11,to_date('2011/02/28','YYYY/MM/DD'),'test11','michel','trepane','mail11@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (12,to_date('2013/02/11','YYYY/MM/DD'),'test12','daniel','toscan','mail12@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (13,to_date('2010/07/4','YYYY/MM/DD'),'test13','pascal','preche','mail13@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (14,to_date('2013/01/02','YYYY/MM/DD'),'test14','leon','gambetta','mail14@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (15,to_date('2013/01/04','YYYY/MM/DD'),'test15','marie','antoinette','mail15@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (16,to_date('2009/01/21','YYYY/MM/DD'),'test16','louis','unix','mail16@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (17,to_date('2012/10/31','YYYY/MM/DD'),'test17','victor-paul','emile','mail17@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (18,to_date('2012/03/22','YYYY/MM/DD'),'test18','dorian','gris','mail18@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (19,to_date('2011/08/29','YYYY/MM/DD'),'test19','elsa','feuerbach','mail19@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (20,to_date('2012/08/30','YYYY/MM/DD'),'test20','alan','turing','mail20@testmail.fr','FFFFFF');
+
+INSERT INTO utilisateur 
+VALUES (21,to_date('2012/08/30','YYYY/MM/DD'),'test21','catherine','maillard','mail21@testmail.fr','FFFFFF');
+
 
 
 INSERT INTO objetculturel
@@ -113,13 +167,65 @@ INSERT INTO NOTE
 VALUES(1,2,10);
 
 INSERT INTO NOTE
-VALUES(2,3,7);
+VALUES(1,3,7);
 
 INSERT INTO NOTE
-VALUES(1,3,4);
+VALUES(2,3,4);
 
 INSERT INTO NOTE
-VALUES(3,2,6);
+VALUES(3,3,6);
+
+INSERT INTO NOTE
+VALUES(4,3,10);
+
+INSERT INTO NOTE
+VALUES(5,3,5);
+
+INSERT INTO NOTE
+VALUES(6,3,5);
+
+INSERT INTO NOTE
+VALUES(7,3,6);
+
+INSERT INTO NOTE
+VALUES(8,3,2);
+
+INSERT INTO NOTE
+VALUES(9,3,7);
+
+INSERT INTO NOTE
+VALUES(10,3,7);
+
+INSERT INTO NOTE
+VALUES(11,3,3);
+
+INSERT INTO NOTE
+VALUES(12,3,10);
+
+INSERT INTO NOTE
+VALUES(13,3,1);
+
+INSERT INTO NOTE
+VALUES(14,3,4);
+
+INSERT INTO NOTE
+VALUES(15,3,3);
+
+INSERT INTO NOTE
+VALUES(16,3,1);
+
+INSERT INTO NOTE
+VALUES(17,3,9);
+
+INSERT INTO NOTE
+VALUES(18,3,9);
+
+INSERT INTO NOTE
+VALUES(19,3,2);
+
+INSERT INTO NOTE
+VALUES(20,3,1);
+
 
 INSERT INTO CREELISTE
 VALUES(1,1);
