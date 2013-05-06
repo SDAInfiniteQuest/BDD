@@ -14,7 +14,7 @@
 	oci_execute($stmt,$mode);
 	
 	if ($liste[2]==='LIVRE') {
-		$stmt=oci_parse($conn,"SELECT ob.date,ob.genre,li.style,li.collection,li.titreLivre,li.idObjet FROM OBJETCULTUREL ob,LIVRE li WHERE li.idOjet=(SELECT ob2.idObjet FROM OBJETCULTUREL ob2 WHERE ob2.idObjet IN (SELECT ap.idObjet FROM APPARTIENTLISTE ap,LISTEOBJET lio WHERE lio.idListe==ap.idListe))");
+		$stmt=oci_parse($conn,"SELECT ob.date_sortie,ob.genre,li.style,li.collection,li.titreLivre,li.idObjet FROM OBJETCULTUREL ob,LIVRE li WHERE li.idObjet=ob.idObjet AND li.idObjet IN (	SELECT ap.idObjet FROM APPARTIENTLISTE ap,LISTEOBJET lio 	WHERE lio.idListe=ap.idListe)");
 
 		oci_execute($stmt,$mode);
 		
@@ -22,7 +22,7 @@
 	else if($liste[2]==='FILM'){
 		$stmt=oci_parse($conn,"SELECT ob.date,ob.genre,fi.titreFilm,fi.idObjet FROM OBJETCULTUREL ob,FILM fi WHERE fi.idOjet=(SELECT ob2.idObjet FROM OBJETCULTUREL ob2 WHERE ob2.idObjet IN (SELECT ap.idObjet FROM APPARTIENTLISTE ap,LISTEOBJET lio WHERE lio.idListe==ap.idListe))");
 		oci_execute($stmt,$mode);
-		
+	
 	}
 	else if($liste[2]==='ALBUM'){
 		$stmt=oci_parse($conn,"SELECT ob.date,ob.genre,ab.titreAlbum,ab.idObjet FROM OBJETCULTUREL ob,ALBUM ab WHERE ab.idOjet=(SELECT ob2.idObjet FROM OBJETCULTUREL ob2 WHERE ob2.idObjet IN (SELECT ap.idObjet FROM APPARTIENTLISTE ap ,LISTEOBJET lio WHERE lio.idListe==ap.idListe))");
