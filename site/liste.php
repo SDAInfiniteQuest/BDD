@@ -2,7 +2,7 @@
 
 
 <?php>
-	$conn = oci_connect('pallamidessi','bonefactory00','localhost:1521/ROSA');
+	$conn = oci_connect('pallamidessi','','localhost:1521/ROSA');
 	$mode =	OCI_COMMIT_ON_SUCCESS;
 	
 	$stmt=oci_parse("SELECT * FROM LISTEOBJET WHERE $_POST['id_liste']");
@@ -85,13 +85,12 @@
 				if (liste[2]==='LIVRE') {
 					while (($objet=oci_fetch_row($stmt))!=FALSE) {
 						echo
-						"<br/>Titre :$objet[1],
-						<br/>Collection:$objet[],
-						<br/>Style:$objet[],
-						<br/>Genre',$objet[],
-						<br/>','Date
-						de parution',$objet[];
-						<>
+						"<br/>Titre :$objet[1]
+						<br/>Collection:$objet[]
+						<br/>Style:$objet[]
+						<br/>Genre,$objet[]
+						<br/>Date de parution',$objet[];
+						";
 					}
 					
 				}
