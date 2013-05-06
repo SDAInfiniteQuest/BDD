@@ -52,8 +52,7 @@
 					</p>
 
 					<p>
-						<label for="date_naissance">Date de naissance de la forme YYYY/MM/DD </label>
-						<br/>  <input type="text"name="date_naissance" id="date_naissance">
+						<label for="date_naissance">Date de naissance de la forme YYYY/MM/DD </label> <br/>  <input type="text"name="date_naissance" id="date_naissance">
 					</p>
 					
 
@@ -71,6 +70,10 @@
 					
 					<p>
 						<label for="passw2">Confirmer le password</label> <br/><input type="text"name="passw2" id="passw2">
+					</p>
+
+					<p>
+					<input type="submit" value="Envoyer" />
 					</p>
 
 				</form>
