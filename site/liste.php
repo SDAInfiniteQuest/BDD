@@ -14,7 +14,8 @@
 	oci_execute($stmt,$mode);
 	
 	if ($liste[2]==='LIVRE') {
-		$stmt=oci_parse($conn,"SELECT ob.date_sortie,ob.genre,li.style,li.collection,li.titreLivre,li.idObjet FROM OBJETCULTUREL ob,LIVRE li WHERE li.idObjet=ob.idObjet AND li.idObjet IN (	SELECT ap.idObjet FROM APPARTIENTLISTE ap,LISTEOBJET lio 	WHERE lio.idListe=ap.idListe)");
+		$stmt=oci_parse($conn,"SELECT
+		ob.date_sortie,ob.genre,li.style,li.collection,li.titreLivre,li.idObjet FROM OBJETCULTUREL ob,LIVRE li WHERE li.idObjet=ob.idObjet AND li.idObjet IN (SELECT ap.idObjet FROM APPARTIENTLISTE ap WHERE $_get[id_liste]=ap.idListe)");
 
 		oci_execute($stmt,$mode);
 		
