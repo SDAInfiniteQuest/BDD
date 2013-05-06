@@ -7,9 +7,9 @@
 		<nav>
 			<ul>
 				<li><a href="#">Sign-in</a></li>
-				<li><a href="#">Create Account</a></li>
+				<li><a href="inscription.php">Create Account</a></li>
 				<li><a href="#">Item</a></li>
-				<li><a href="#">List</a></li>
+				<li><a href="liste_liste.php">List</a></li>
 				<li><a href="#">People</a></li>
 			</ul>
 		</nav>
