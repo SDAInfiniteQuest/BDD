@@ -3,7 +3,8 @@
 	$conn = oci_connect('pallamidessi','','localhost:1521/ROSA');
 	$mode =	OCI_COMMIT_ON_SUCCESS;
 	
-	$stmt=oci_parse("SELECT * FROM utilisateur WHERE $_GET[idUtilisateur]=u.idUtilisateur");
+	$stmt=oci_parse($conn,"SELECT * FROM utilisateur WHERE :usr=u.idUtilisateur");
+	oci_bind_by_name($stmt,":usr",$_GET[idUtilisateur]);
 	oci_execute($stmt,$mode);
 
 	$user=oci_fetch_array($stmt);

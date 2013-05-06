@@ -4,7 +4,8 @@
 $conn = oci_connect('pallamidessi','xxx','localhost:1521/ROSA');
 $mode =	OCI_COMMIT_ON_SUCCESS;
 
-$stmt=oci_parse("SELECT idObjet FROM objetculturel WHERE $_GET['idObjet']==idObjet");
+$stmt=oci_parse($conn,"SELECT idObjet FROM objetculturel WHERE :args=idObjet");
+oci_bind_by_name($stmt,":args",$_GET['idObjet']);
 oci_execute($stmt,$mode);
 
 echo"
@@ -30,9 +31,10 @@ echo"
 
 echo "<div>";
 
-if(($s=oci_parse("select * from LIVRE l where $stmt=l.idObjet"))) 
+if(($s=oci_parse($conn,"select * from LIVRE l where :ido=l.idObjet"))) 
 {
 	echo "<p>"; 
+	oci_bind_by_name($s,"ido",$stmt);
 	oci_execute($s,$mode);
 	$ar=oci_fetch_array($s);
 	echo "<br/> AUTEUR: $ar['auteurLivre']";
@@ -42,24 +44,26 @@ if(($s=oci_parse("select * from LIVRE l where $stmt=l.idObjet")))
 	echo "</p>";
 	break;
 }
-else if(($s=oci_parse("select * from FILM f where f.idObjet=$stmt"))) 
+else if(($s=oci_parse($conn,"select * from FILM f where f.idObjet=:ido"))) 
 {
 	echo "<p>"; 
+	oci_bind_by_name($s,"ido",$stmt);
 	oci_execute($s,$mode);
 	$ar=oci_fetch_array($s);
-	echo "<br/> REALISATEUR: $ar['realisateurID']";
-	echo "<br/> ACTEUR PRINCIPAL: $ar['acteurID']";
-	echo "<br/> TITRE: $ar['titre']";
+	echo "<br/> REALISATEUR: $ar[realisateurID]";
+	echo "<br/> ACTEUR PRINCIPAL: $ar[acteurID]";
+	echo "<br/> TITRE: $ar[titre]";
 	echo "</p>";
 	break;
 }
-else(($s=oci_parse("select * from ALBUM a where a.idObjet=$stmt"))) 
+else(($s=oci_parse($conn,"select * from ALBUM a where a.idObjet=:ido"))) 
 {
 	echo "<p>"; 
+	oci_bind_by_name($s,"ido",$stmt);
 	oci_execute($s,$mode);
 	$ar=oci_fetch_array($s);
-	echo "<br/> AUTEUR: $ar['auteursAlbum']";
-	echo "<br/> TITRE: $ar['titre']";
+	echo "<br/> AUTEUR: $ar[auteursAlbum]";
+	echo "<br/> TITRE: $ar[titre]";
 	echo "</p>";
 	break;
 }
