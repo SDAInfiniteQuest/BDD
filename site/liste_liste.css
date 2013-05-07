@@ -17,4 +17,7 @@ h2
 {
 }
 
-
+#main_wrapper li
+{
+	display:default;
+}
