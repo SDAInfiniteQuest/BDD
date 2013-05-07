@@ -32,12 +32,12 @@ echo"
 			include("header.php"); 
 				<div>
 					<div>";
-					echo "<br/> Identifiant utilisateur: $user[idUtilisateur]"
-					echo "<br/> Date de naissance: $user[date_de_naissance]"
-					echo "<br/> Nom: $user[Nom]"
-					echo "<br/> Prenom: $user[Prénom]"
-					echo "<br/> Adresse: $user[adresse]"
-					echo "<br/> E-Mail: $user[mail]"
+					echo "<br/> Identifiant utilisateur: $user['idUtilisateur']"
+					echo "<br/> Date de naissance: $user['date_de_naissance']"
+					echo "<br/> Nom: $user['nom']"
+					echo "<br/> Prenom: $user['prenom']"
+					echo "<br/> Adresse: $user['adresse']"
+					echo "<br/> E-Mail: $user['mail']"
 					echo 			
 					"</div>
 				</div>

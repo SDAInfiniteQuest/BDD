@@ -18,31 +18,30 @@
 	</head>
 
 	<body>
+		<?php	include('header.php'); ?>  
 		<div id="main_wrapper">
-			
-			<?php include("header.php"); ?> 
+		
 			<?php
 			if(isset($_SESSION['Pseudo']))
 			{
-				echo "vous etes déjà enregistré sur notre site";
+				echo 'vous etes déjà enregistré sur notre site';
 			}
 			else
 			{
-				echo"
-			<form method="post" action="inscription.php">
-			
-				<p>
-					<label for="Login">Search</label> <input type="text"name="Login" id="Login">
-				</p>
-
-				<p>
-					<label for="Password">Search</label> <input	type="text"name="Password" id="Password">
-				</p>
-			</form>"
+				echo
+				'<form method="post" action="inscription.php"> 
+					<p>	
+						<label for="Login">Login</label> <input type="text"name="Login" id="Login">	
+					</p> 
+					<p> 
+						<label for="Password">Password</label> <input	type="text"name="Password" id="Password">	
+					</p> 
+				</form>
+				';
 			}
 			?>
-			<?php include("footer.php"); ?> 
 
 		</div>
+		<?php	include('footer.php'); ?> 
 	</body>
 </html>

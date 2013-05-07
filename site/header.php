@@ -6,7 +6,16 @@
 	<div id="nav_and_search_header">
 		<nav>
 			<ul>
-				<li><a href="#">Sign-in</a></li>
+				<php?
+				if(isset($_SESSION['Pseudo'])
+				{
+					echo "<li><a href="login.html">$_SESSION['Pseudo']</a></li>";
+				}
+				else
+				{
+					echo "<li><a href="login.html">Sign-in</a></li>";
+				}
+				?>
 				<li><a href="inscription.php">Create Account</a></li>
 				<li><a href="#">Item</a></li>
 				<li><a href="liste_liste.php">List</a></li>
