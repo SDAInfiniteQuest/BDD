@@ -60,7 +60,7 @@
 							<ul>
 						';
 							while (($elem=oci_fetch_array($liste_album))!=FALSE){
-								echo'<li><a href="liste.php?id_liste='.$elem['IDLISTE'].'>'.$elem['NOMLISTE'].'</a><li>"';
+								echo'<li><a href="liste.php?id_liste='.$elem['IDLISTE'].'">'.$elem['NOMLISTE'].'</a><li>';
 							}
 
 							echo'
@@ -74,7 +74,7 @@
 							<ul>
 						';
 							while (($elem=oci_fetch_array($liste_livre))!=FALSE){
-								echo'<li><a href="liste.php?id_liste='.$elem['IDLISTE'].'>'.$elem['NOMLISTE'].'</a><li>"';
+								echo'<li><a href="liste.php?id_liste='.$elem['IDLISTE'].'">'.$elem['NOMLISTE'].'</a><li>';
 							}
 							oci_close($conn);	
 							echo'
