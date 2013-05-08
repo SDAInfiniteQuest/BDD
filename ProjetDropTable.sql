@@ -4,10 +4,6 @@ drop table LIVRE;
 
 drop table ALBUM;
 
-drop table COMMENTE;
-
-drop table ESTCOMMENTE;
-
 drop table CREELISTE;
 
 drop table APPARTIENTLISTE;

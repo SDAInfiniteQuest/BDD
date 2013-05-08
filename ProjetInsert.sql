@@ -250,3 +250,6 @@ INSERT INTO APPARTIENTLISTE
 VALUES(3,4);
 
 
+INSERT INTO COMMENTAIRE
+VALUES(1,1,2,'cest une très belle oeuvre',to_date('2011/01/03','YYYY/MM/DD'));
+

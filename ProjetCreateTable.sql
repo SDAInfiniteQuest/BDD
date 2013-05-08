@@ -56,7 +56,10 @@ create table PERSONNE
 create table COMMENTAIRE
 (
 	idComment number(6) PRIMARY KEY,
-	commentaire varchar2(255) NOT NULL
+	idUtilisateur number(6),
+	idObjet number(6),
+	commentaire varchar2(255) NOT NULL,
+	date_commentaire date NOT NULL
 );
 
 create table LISTEOBJET
@@ -64,24 +67,6 @@ create table LISTEOBJET
 	idListe number(6) PRIMARY KEY,
 	typeListe varchar2(30),
 	nomListe varchar2(30) NOT NULL
-);
-
-create table COMMENTE
-(
-	idUtilisateur number(6) ,
-	idComment number(6) ,
-	PRIMARY KEY (idUtilisateur,idComment),
-	FOREIGN KEY (idUtilisateur) REFERENCES UTILISATEUR,
-	FOREIGN KEY (idComment) REFERENCES COMMENTAIRE
-);
-
-create table ESTCOMMENTE
-(
-	idObjet number(6) ,
-	idComment number(6) ,
-	PRIMARY KEY (idObjet,idComment),
-	FOREIGN KEY (idObjet) REFERENCES OBJETCULTUREL,
-	FOREIGN KEY (idComment) REFERENCES COMMENTAIRE
 );
 
 create table CREELISTE
