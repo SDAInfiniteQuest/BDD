@@ -1,14 +1,15 @@
 /*--Requete n°1
 SELECT *
-FROM utilisateur u, creeListe cl, listeObjet lo
+FROM utilisateur u
 WHERE 
-		cl.idUtilisateur=u.idUtilisateur 
-	AND
-		cl.idListe=lo.idListe
-GROUP BY lo.type AND idUtilisateur
-HAVING count(*)=3;
-;*/
-
+		u.idUtilisateur=(SELECT cl.idUtilisateur
+		FROM creeListe cl
+		WHERE cl.idListe=(SELECT DISTINCT l.idListe
+				FROM listeObjet l
+				GROUP BY typeListe
+				HAVING count(*)=3))
+;
+*/
 --Requete n°2:ok
 SELECT *
 FROM utilisateur u1
@@ -22,7 +23,7 @@ WHERE
 		WHERE s1.idFollower=u1.idUtilisateur)
 ;
 
---Requete n°3
+--Requete n°3:ok
 SELECT * 
 FROM objetCulturel oc
 WHERE 
@@ -30,20 +31,21 @@ WHERE
 		FROM note n1
 		WHERE n1.idObjet=oc.idObjet)
 	AND
-		20<(SELECT count(*)
+		20<=(SELECT count(*)
 		FROM commentaire ec
 		WHERE ec.idObjet=oc.idObjet)
 ;
-/*
---Requete n°4
-SELECT idUtilisateur
+
+--Requete n°4:ok
+SELECT DISTINCT u.idUtilisateur
 FROM utilisateur u, note n
 WHERE 
-		u.isUtilisateur=n.idUtilisateur 
-	AND
-		3<=n.note 
+		3<=(SELECT min(n.note)
+		FROM note n
+		WHERE n.idUtilisateur=u.idUtilisateur)
+ORDER BY u.idUtilisateur
 ;
-
+/*
 --Requete n°5
 SELECT *
 FROM objetCulturel oc
