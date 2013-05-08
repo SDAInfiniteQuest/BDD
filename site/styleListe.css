@@ -1,0 +1,17 @@
+#name_liste_and_creator h1 
+{
+	color:rgb(102, 204, 51);
+	position:relative;
+	left:5%;
+}
+
+#name_liste_and_creator p
+{
+	position:relative;
+	left:10%;
+}
+
+#list p 
+{
+	padding-right:35px;
+}

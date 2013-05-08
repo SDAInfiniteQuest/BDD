@@ -6,11 +6,20 @@
 	<div id="nav_and_search_header">
 		<nav>
 			<ul>
-				<li><a href="#">Sign-in</a></li>
+				<?php 
+					if (isset($_SESSION['login'])) {
+						echo"Bonjour".$_SESSION['login'];
+					}
+					else{
+						echo'<li><a href="login.php">Sign-in</a></li>';
+					}	
+				?>
 				<li><a href="inscription.php">Create Account</a></li>
-				<li><a href="#">Item</a></li>
+				<li><a href="liste_objet.php">Item</a></li>
 				<li><a href="liste_liste.php">List</a></li>
-				<li><a href="#">People</a></li>
+				<li><a href="listeUtilisateurs.php">People</a></li>
+				<li><a href="logout.php">Logout</a></li>
+				
 			</ul>
 		</nav>
 		

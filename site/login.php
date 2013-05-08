@@ -1,25 +1,52 @@
 <?php
-	$conn = oci_connect('pallamidessi','bonefactory00','localhost:1521/ROSA');
-	$mode =	OCI_COMMIT_ON_SUCCESS;
-	
-	$stmt=oci_parse($conn,'SELECT hash FROM UTILISATEUR pseudo=:pseudo');
-	oci_bind_by_name($stmt,":pseudo",$_POST['Pseudo']);
-	oci_execute($stmt);
-
-	if($stmt!=NULL)
-	{
-		echo "aucun utilisateur ne possède ce pseudo dans la base";
-	}
-	else if($stmt==$_POST['Password'])
-	{
-		echo "vous etes maintenant connecté au site";		
-		$_SESSION['login']=$_POST['Pseudo'];
-		$_SESSION['pwd']=$_POST['Password'];
-	}
-	else
-	{
-		echo "mot de passe incorrect";$
-	}
+	session_start();
 ?>
 
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="styleLogin.css">
+		<title>BiblioMedia </title>
 
+		<!-- Script de compatibilite html5 pour IE < 9 --!>
+		
+		<!--[if lt IE 9]>
+			<script src=http://html5shiv.googlecode.com/svn/trunk/html5.js></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+		<?php	include('header.php'); ?>  
+		<div id="main_wrapper">
+		
+			<?php
+			if(isset($_SESSION['Pseudo']))
+			{
+				echo 'vous etes déjà enregistré sur notre site';
+			}
+			else
+			{
+				echo
+				'<form method="post" action="login_request.php" id="log"> 
+					<p>	
+						<label for="Login">Login</label> <input type="text"name="Login" id="Login">	
+					</p> 
+					<p> 
+						<label for="Password">Password</label> <input	type="password" name="Password" id="Password">	
+					</p>
+
+					<p>
+						<input type="submit" value="Envoyer" >
+					</p>
+				</form>
+				';
+			}
+			?>
+
+		</div>
+		<?php	include('footer.php'); ?> 
+	</body>
+</html>

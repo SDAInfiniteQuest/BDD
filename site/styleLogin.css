@@ -1,0 +1,14 @@
+#log
+{
+	position:relative;
+	left:15%;
+	width:400px;
+	margin-top:40px;
+	color:#9393ba;
+}
+
+#log input 
+{
+	position:relative;
+	float:right;
+}

@@ -10,7 +10,6 @@
 	
 	$liste_livre=oci_parse($conn,"SELECT * FROM LISTEOBJET WHERE typeListe LIKE 'LIVRE'");
 	oci_execute($liste_livre);;
-
 	echo'
 		<!DOCTYPE html>
 		<html>
@@ -49,6 +48,7 @@
 								echo'</a><li>';
 							}
 
+							oci_free_statement($liste_film);
 							echo'
 							</ul>
 						</nav>
@@ -62,6 +62,7 @@
 							while (($elem=oci_fetch_array($liste_album))!=FALSE){
 								echo'<li><a href="liste.php?id_liste='.$elem['IDLISTE'].'">'.$elem['NOMLISTE'].'</a><li>';
 							}
+							oci_free_statement($liste_album);
 
 							echo'
 							</ul>
@@ -76,6 +77,7 @@
 							while (($elem=oci_fetch_array($liste_livre))!=FALSE){
 								echo'<li><a href="liste.php?id_liste='.$elem['IDLISTE'].'">'.$elem['NOMLISTE'].'</a><li>';
 							}
+							oci_free_statement($liste_livre);
 							oci_close($conn);	
 							echo'
 							</ul>

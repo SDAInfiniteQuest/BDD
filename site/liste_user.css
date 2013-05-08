@@ -1,0 +1,23 @@
+
+#main_wrapper div li
+{
+	color:#FFFFFF;
+	margin:
+}
+
+#main_wrapper div
+{
+	position:relative;
+	background-color:rgba(0,0,0,0.5);
+	top:25px;
+	padding-bottom:10px;
+	padding-top:10px;
+	margin-bottom:50px;
+	width:600px;
+}
+
+
+#main_wrapper ul
+{
+	list-style-type:none;
+}

@@ -68,25 +68,27 @@ footer nav
 	display: inline-block;
 	width: 500px;
 	position:relative;
-	left:47%;
+	left:15%;
 }
 
 #searchbox_header
 {
-	margin-top:-15px;
+	position:relative;
+	top:-35px;
+	float:right;
 }
 
 #nav_and_search_footer
 {
-	display: inline-block;
+	width:70%;
+	position:relative;
+	left:5%;
 }
 
 #searchbox_footer
 {
 	float:right;
-	margin-top:-55px;
-	position:relative;
-	left:44%;
+	margin-top:-10 px;
 }
 
 nav ul
@@ -96,7 +98,13 @@ nav ul
 	list-style-type: none;
 }
 
-nav li
+header nav li
+{
+	display: inline-block;
+	margin-right: 15px;	
+}
+
+footer nav li
 {
 	display: inline-block;
 	margin-right: 15px;	
@@ -109,13 +117,14 @@ nav a
 	text-decoration: none;
 }
 
-.nav a:hover
+nav a:hover
 {
 	color:#9393ba;
 }
 
 #copyright
 {
+	width:600px;
 	position:relative;
 	left:15%;
 	font-size:13px;

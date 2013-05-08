@@ -2,7 +2,6 @@
 	$conn = oci_connect('pallamidessi','bonefactory00','localhost:1521/ROSA');
 
 	$listeUtilisateurs=oci_parse($conn,"select * from utilisateur");
-
 	oci_execute($listeUtilisateurs);
 
 	echo'
@@ -11,7 +10,7 @@
 			<head>
 				<meta charset="utf-8" />
 				<link rel="stylesheet" href="style.css">
-				<link rel="stylesheet" href="liste_liste.css">
+				<link rel="stylesheet" href="liste_user.css">
 				<title>BiblioMedia </title>
 
 				<!-- Script de compatibilite html5 pour IE < 9 --!>
@@ -26,23 +25,24 @@
 			';		
 				include("header.php"); 
 
-				echo '<div>';
-				while($elem=oci_fetch_array($listeUtilisateurs)!=FALSE)
+				echo '<div id="main_wrapper">';
+				while(($user=oci_fetch_array($listeUtilisateurs))!=FALSE)
 				{
-					echo '<div>	<p>';
-						echo "<br/> Identifiant utilisateur: $user['idUtilisateur']"
-						echo "<br/> Pseudo: $user['pseudo']"
-						echo "<br/> Date de naissance: $user['date_de_naissance']"
-						echo "<br/> Nom: $user['nom']"
-						echo "<br/> Prenom: $user['prenom']"
-						echo "<br/> Adresse: $user['adresse']"
-						echo "<br/> E-Mail: $user['mail']"
+					echo '<div>	<ul>';
+						echo "<li> Pseudo:		".$user['PSEUDO'].'<li>';
+						echo "<li> Date de naissance: ".$user['DATE_DE_NAISSANCE'];
+						echo "<li> Nom:				".$user['NOM'];
+						echo "<li> Prénom:		".$user['PRENOM'];
+						echo "<li/> E-Mail:		".$user['MAIL'];
 					echo '</p> </div>';
 				}
+				oci_free_statement($listeUtilisateurs);
+				oci_close($conn);
 				echo '</div>';
 
 				include("footer.php");
-	echo'
+				
+				echo'
 			</body>
 		</html>
 	';

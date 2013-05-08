@@ -1,0 +1,46 @@
+
+
+#main_wrapper div li
+{
+	color:#FFFFFF;
+	margin-left:35px;
+	padding-bottom:10px;
+}
+
+#main_wrapper div
+{
+	position:relative;
+	background-color:rgba(0,0,0,0.5);
+	top:25px;
+	padding-bottom:10px;
+	padding-top:10px;
+	margin-bottom:50px;
+	width:70%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+li a
+{
+	color:#505076;
+	padding-bottom: 3px;
+	text-decoration: none;
+}
+
+li a:hover
+{
+	color:#9393ba;
+}
+
+#main_wrapper li
+{
+	list-style-type:none;
+}
+
+#main_wrapper h2
+{
+	color:rgb(102, 204, 51);
+	position:relative;
+	text-align:center;
+	top:-15px;
+}

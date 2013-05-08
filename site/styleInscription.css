@@ -2,7 +2,12 @@
 {
 	display:inline-block;
 	position:relative;
-	top:30px;
+	top:-150px;
+	background-color:rgba(0,0,0,0.5);
+	color:#9393ba;
+	padding-left:25px;
+	padding-right:25px;
+	padding-top:-10px;
 }
 
 #formulaire
@@ -13,9 +18,9 @@
 	top:100px;
 }
 
-#formulaire.label
+#formulaire label
 {
-	color:#ffffff;
+	color:#9393ba;
 	margin-bottom:5px;
 	/*font-family font-size*/
 }
@@ -24,4 +29,9 @@
 {
 	position:relative;
 	left:15%;
+}
+
+#bienvenue h1
+{
+	color:rgb(102, 204, 51);
 }
