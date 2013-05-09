@@ -1,7 +1,7 @@
 
 <?php
 	
-	$conn = oci_connect('pallamidessi','bonefactory00','localhost:1521/ROSA');
+	$conn = oci_connect('pallamidessi','XXX','localhost:1521/ROSA');
 	$mode =	OCI_COMMIT_ON_SUCCESS;
 
 	$stmt1=oci_parse($conn,"SELECT * FROM livre WHERE :args=idObjet");

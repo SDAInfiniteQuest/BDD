@@ -1,5 +1,5 @@
 <?php
-	$conn = oci_connect('pallamidessi','bonefactory00','localhost:1521/ROSA');
+	$conn = oci_connect('pallamidessi','XXX','localhost:1521/ROSA');
 	$mode =	OCI_COMMIT_ON_SUCCESS;
 	
 	$stmt=oci_parse($conn,'SELECT HASH FROM UTILISATEUR WHERE pseudo=:pseudo');

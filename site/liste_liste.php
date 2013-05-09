@@ -1,6 +1,6 @@
 <?php
 
-	$conn = oci_connect('pallamidessi','bonefactory00','localhost:1521/ROSA');
+	$conn = oci_connect('pallamidessi','XXX','localhost:1521/ROSA');
 
 	$liste_film=oci_parse($conn,"SELECT * FROM LISTEOBJET WHERE typeListe LIKE 'FILM' ");
 	oci_execute($liste_film);

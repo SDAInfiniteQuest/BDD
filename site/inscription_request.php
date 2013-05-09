@@ -12,7 +12,7 @@
 		header('Location: inscription.php');
 	}
 	else {
-		$conn = oci_connect('pallamidessi','bonefactory00','localhost:1521/ROSA');
+		$conn = oci_connect('pallamidessi','XXX','localhost:1521/ROSA');
 	
 		$stmt=oci_parse($conn,'SELECT max(idUtilisateur) FROM UTILISATEUR');
 		oci_execute($stmt);

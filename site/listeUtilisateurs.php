@@ -1,5 +1,5 @@
 <?php
-	$conn = oci_connect('pallamidessi','bonefactory00','localhost:1521/ROSA');
+	$conn = oci_connect('pallamidessi','XXX','localhost:1521/ROSA');
 
 	$listeUtilisateurs=oci_parse($conn,"select * from utilisateur");
 	oci_execute($listeUtilisateurs);
